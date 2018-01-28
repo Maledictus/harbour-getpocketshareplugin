@@ -1,0 +1,10 @@
+# Rename this file as harbour-linksbag.changes to include changelog
+# entries in your RPM file.
+#
+# Add new changelog entries following the format below.
+# Add newest entries to the top of the list.
+# Separate entries from eachother with a blank line.
+
+* Sun Jan 28 2018 Oleg Linkin <maledictusdemagog@gmail.com> 1.1
+- Add translations: FR, ES, SV
+

@@ -35,14 +35,21 @@ DISTFILES += rpm/harbour-getpocketshareplugin.spec \
     qml/GetPocketShareUi.qml \
     translations/harbour-getpocketshareplugin.ts \
     translations/harbour-getpocketshareplugin_en.ts \
-    translations/harbour-getpocketshareplugin_ru.ts
+    translations/harbour-getpocketshareplugin_ru.ts \
+    rpm/harbour-getpocketshareplugin.changes
 
 TRANSLATIONS += translations/harbour-getpocketshareplugin.ts \
     translations/harbour-getpocketshareplugin_en.ts \
-    translations/harbour-getpocketshareplugin_ru.ts
+    translations/harbour-getpocketshareplugin_ru.ts \
+    translations/harbour-getpocketshareplugin_fr.ts \
+    translations/harbour-getpocketshareplugin_es.ts \
+    translations/harbour-getpocketshareplugin_sv.ts
 
 EN_QM = translations/harbour-getpocketshareplugin_en.qm
 RU_QM = translations/harbour-getpocketshareplugin_ru.qm
+FR_QM = translations/harbour-getpocketshareplugin_fr.qm
+ES_QM = translations/harbour-getpocketshareplugin_es.qm
+SV_QM = translations/harbour-getpocketshareplugin_sv.qm
 
 english_install.path = /usr/share/translations/nemotransferengine
 english_install.files = $$EN_QM
@@ -52,4 +59,16 @@ russian_install.path = /usr/share/translations/nemotransferengine
 russian_install.files = $$RU_QM
 russian_install.CONFIG += no_check_exist
 
-INSTALLS += english_install russian_install
+sv_install.path = /usr/share/translations/nemotransferengine
+sv_install.files = $$SV_QM
+sv_install.CONFIG += no_check_exist
+
+fr_install.path = /usr/share/translations/nemotransferengine
+fr_install.files = $$FR_QM
+fr_install.CONFIG += no_check_exist
+
+es_install.path = /usr/share/translations/nemotransferengine
+es_install.files = $$ES_QM
+es_install.CONFIG += no_check_exist
+
+INSTALLS += english_install russian_install sv_install fr_install es_install
