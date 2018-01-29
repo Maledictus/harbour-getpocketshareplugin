@@ -38,7 +38,7 @@ void GetPocketPluginInfo::query()
     info.displayName = QLatin1String("GetPocket");
     info.userName = userName;
     info.methodId = QLatin1String("GetPocketSharePlugin");
-    info.shareUIPath = QLatin1String("/usr/share/nemo-transferengine/plugins/GetPocketShareUi.qml");
+    info.shareUIPath = QLatin1String("/usr/share/harbour-getpocketshareplugin/qml/GetPocketShareUi.qml");
     info.capabilitities = capabilities;
 
     m_InfoList.clear();

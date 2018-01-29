@@ -1,6 +1,7 @@
 ﻿import QtQuick 2.0
 import Sailfish.Silica 1.0
 import Sailfish.TransferEngine 1.0
+import "harbour/getpocketshareplugin/translator" 1.0
 
 ShareDialog {
     id: root
@@ -9,6 +10,10 @@ ShareDialog {
 
     onAccepted: {
         shareItem.start ()
+    }
+
+    Translator {
+        id: translator
     }
 
     Column {

@@ -1,6 +1,6 @@
 ﻿Name: harbour-getpocketshareplugin
 Summary: GetPocket transfe engine plugin for Sailfish
-Version: 1.1
+Version: 1.2
 Release: 1
 Group: Applications/System
 URL: https://github.com/Maledictus/harbour-getpocketshareplugin
@@ -25,6 +25,7 @@ Requires:
 
 Files:
 - '%{_libdir}/nemo-transferengine/plugins/*.so'
-- '%{_datadir}/nemo-transferengine/plugins/GetPocketShareUi.qml'
+- '%{_datadir}/harbour-getpocketshareplugin/qml/GetPocketShareUi.qml'
+- '%{_datadir}/harbour-getpocketshareplugin/qml/harbour/getpocketshareplugin/translator/qmldir'
 - '%{_datadir}/%{name}'
-- '%{_datadir}/translations/nemotransferengine/*.qm'
+- '%{_datadir}/translations/harbour-getpocketshareplugin/*.qm'

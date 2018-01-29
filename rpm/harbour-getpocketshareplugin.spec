@@ -13,7 +13,7 @@ Name:       harbour-getpocketshareplugin
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 Summary:    GetPocket transfe engine plugin for Sailfish
-Version:    1.1
+Version:    1.2
 Release:    1
 Group:      Applications/System
 License:    The MIT License (MIT)
@@ -62,8 +62,9 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root,-)
 %{_libdir}/nemo-transferengine/plugins/*.so
-%{_datadir}/nemo-transferengine/plugins/GetPocketShareUi.qml
+%{_datadir}/harbour-getpocketshareplugin/qml/GetPocketShareUi.qml
+%{_datadir}/harbour-getpocketshareplugin/qml/harbour/getpocketshareplugin/translator/qmldir
 %{_datadir}/%{name}
-%{_datadir}/translations/nemotransferengine/*.qm
+%{_datadir}/translations/harbour-getpocketshareplugin/*.qm
 # >> files
 # << files
