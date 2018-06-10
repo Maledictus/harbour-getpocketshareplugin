@@ -3,8 +3,7 @@ SUBDIRS = \
     shareui \
     translator
 
-OTHER_FILES = \
-    rpm/harbour-getpocketshareplugin.yaml
+OTHER_FILES = rpm/harbour-getpocketshareplugin.spec
 
 DISTFILES += rpm/harbour-getpocketshareplugin.spec \
     rpm/harbour-getpocketshareplugin.yaml \
@@ -14,6 +13,7 @@ DISTFILES += rpm/harbour-getpocketshareplugin.spec \
     translations/getpocketshareplugin-sv.ts \
     translations/getpocketshareplugin-es.ts \
     translations/getpocketshareplugin-fr.ts \
+    translations/getpocketshareplugin-nl.ts \
     rpm/harbour-getpocketshareplugin.changes
 
 TRANSLATIONS += translations/getpocketshareplugin.ts \
@@ -21,13 +21,15 @@ TRANSLATIONS += translations/getpocketshareplugin.ts \
     translations/getpocketshareplugin-ru.ts \
     translations/getpocketshareplugin-fr.ts \
     translations/getpocketshareplugin-es.ts \
-    translations/getpocketshareplugin-sv.ts
+    translations/getpocketshareplugin-sv.ts \
+    translations/getpocketshareplugin-nl.ts
 
 EN_QM = translations/getpocketshareplugin-en.qm
 RU_QM = translations/getpocketshareplugin-ru.qm
 FR_QM = translations/getpocketshareplugin-fr.qm
 ES_QM = translations/getpocketshareplugin-es.qm
 SV_QM = translations/getpocketshareplugin-sv.qm
+NL_QM = translations/getpocketshareplugin-nl.qm
 
 english_install.path = /usr/share/translations/harbour-getpocketshareplugin
 english_install.files = $$EN_QM
@@ -49,5 +51,9 @@ es_install.path = /usr/share/translations/harbour-getpocketshareplugin
 es_install.files = $$ES_QM
 es_install.CONFIG += no_check_exist
 
-INSTALLS += english_install russian_install fr_install es_install sv_install
+nl_install.path = /usr/share/translations/harbour-getpocketshareplugin
+nl_install.files = $$NL_QM
+nl_install.CONFIG += no_check_exist
+
+INSTALLS += english_install russian_install fr_install es_install sv_install nl_install
 

@@ -1,7 +1,7 @@
 ﻿/*
 The MIT License (MIT)
 
-Copyright (c) 2017 Oleg Linkin <maledictusdemagog@gmail.com>
+Copyright (c) 2017-2018 Oleg Linkin <maledictusdemagog@gmail.com>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -42,7 +42,6 @@ public:
 
     static AccountSettings* Instance(QObject *parent = 0);
 
-    Q_INVOKABLE QVariant value(const QString& key,
-            const QVariant& def = QVariant()) const;
+    Q_INVOKABLE QVariant value(const QString& key, const QVariant& def = QVariant()) const;
     Q_INVOKABLE void setValue(const QString& key, const QVariant& value);
 };
