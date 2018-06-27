@@ -9,7 +9,7 @@ Name:       harbour-getpocketshareplugin
 %{?qtc_builddir:%define _builddir %qtc_builddir}
 
 Summary:    GetPocket transfe engine plugin for Sailfish
-Version:    1.4
+Version:    1.5
 Release:    1
 Group:      Applications/System
 License:    The MIT License (MIT)
