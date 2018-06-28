@@ -1,5 +1,6 @@
 ﻿#include "getpocketapi.h"
 
+#include <QFile>
 #include <QJsonArray>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -8,6 +9,10 @@
 #include <QNetworkRequest>
 #include <QSettings>
 #include <QStandardPaths>
+
+#include <mlite5/MDConfGroup>
+
+#include "accountsettings.h"
 
 GetPocketApi::GetPocketApi(QObject *parent)
 : QObject(parent)
@@ -30,9 +35,23 @@ namespace
 
 void GetPocketApi::AddBookmark(const QUrl& url, const QStringList& tags)
 {
-    QSettings settings(QStandardPaths::writableLocation (QStandardPaths::ConfigLocation) +
-            "/harbour-linksbag/linksbag.conf", QSettings::NativeFormat);
-    const QString& accessToken = settings.value ("access_token").toString();
+    QString accessToken = AccountSettings::Instance()->value("accessToken").toString();
+    if (accessToken.isEmpty()) {
+        const QString path = QStandardPaths::writableLocation(QStandardPaths::ConfigLocation) +
+                "/harbour-linksbag/linksbag.conf";
+        if (QFile::exists(path)) {
+            qDebug() << "Try to read credentials from linksbag settings file";
+            QSettings settings(path, QSettings::NativeFormat);
+            accessToken = settings.value("access_token").toString();
+        }
+        else
+        {
+            qDebug() << "Try to read credentials from linksbag dconf settings";
+            auto linksBagConf = new MDConfGroup("/apps/harbour-linksbag");
+            accessToken = linksBagConf->value("accessToken").toString();
+            linksBagConf->deleteLater();
+        }
+    }
 
     QVariantMap params;
     params["consumer_key"] = m_ConsumerKey;
