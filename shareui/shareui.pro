@@ -10,6 +10,8 @@ QT += network
 
 CONFIG += plugin link_pkgconfig
 
+DEFINES += CONSUMER_KEY=\\\"$$CONSUMER_KEY\\\"
+
 PKGCONFIG += nemotransferengine-qt5 mlite5
 
 HEADERS += src/accountsettings.h \
